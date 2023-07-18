@@ -1,0 +1,249 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: sans-serif;
+    color: rgb(42, 42, 42);
+}
+
+button{
+    font-family: sans-serif;
+    cursor: pointer;
+}
+
+path,svg,i{
+    pointer-events: none;
+}
+
+
+.colors{
+    min-height: 80vh;
+    display: flex;
+    color: rgb(205, 205, 205);
+}
+
+.color{
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+    overflow: hidden;
+}
+
+.color h2 {
+    font-size: 2rem;
+    cursor: pointer;
+    margin-top: -100px;
+}
+
+.sliders{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 0;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.112);
+    padding: 1rem;
+    width: 80%;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    transform: translateY(100%);
+    transition: all .5s ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sliders.active{
+    opacity: 1;
+    transform: translateY(0%);
+
+    pointer-events: all;
+}
+
+.sliders button{
+    position: absolute;
+    top:0;
+    right: 0;
+    padding: 0.5rem;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    border: none;
+    background-color: rgb(237, 237, 237);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.controls{
+    display: flex;
+    flex-direction: column;
+}
+
+.panel{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 20vh;
+}
+
+.library-panel, .generate-panel, .save-panel{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.panel button{
+    font-size: 1.2rem;
+    margin: 1rem;
+    padding: 1rem 2rem;
+    background-color: rgb(30, 33, 63);
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 1rem;
+}
+
+.panel p{
+    font-size: 1.2rem;
+}
+
+.adjust, .lock{
+    font-size: 2rem;
+    border: none;
+    background-color: transparent;
+    margin: 1rem 0;
+    cursor: pointer;
+}
+
+input[type="range"]{
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 1rem 0rem;
+    width: 100%;
+    position: relative;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+
+.copy-container, .save-container, .library-container{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease-in-out;
+}
+
+
+
+.copy-popup, .save-popup, .library-popup{
+    padding: 2rem 1rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    transform: translateY(2rem);
+    min-width: 30%;
+    min-height: 30vh;
+    border-radius: 2rem;
+    transition: all 0.5s ease-in-out;
+}
+
+.copy-popup h4, .save-popup h4, .library-popup{
+    font-size: 2rem;
+    padding: 2rem;
+}
+
+.copy-container.active, .save-container.active, .library-container.active{
+    opacity: 1;
+    pointer-events: all;
+}
+
+.copy-popup.active, .save-popup.active, .library-popup.active{
+    transform: translateY(0);
+}
+
+.save-name{
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+
+.submit-save{
+    margin: 2rem;
+    padding: 1rem 3rem;
+    border: none;
+    background-color: rgb(77, 77, 77);
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.library-popup{
+    width: 40%;
+    padding: 1rem;
+    justify-content: flex-start;
+    overflow-y: scroll;
+    max-height: 50vh;
+
+    font-size: 1.3rem;
+}
+
+.custom-palette{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 2rem;
+}
+
+.library-popup::-webkit-scrollbar {
+    padding-left: 50px;
+    width: 10px;
+    border-radius: 1rem;
+     background-color: #ffffff; 
+  }
+
+  .library-popup::-webkit-scrollbar-thumb {
+    background: #00000049;
+    border-radius: 1rem;
+  }
+
+  .small-preview{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+  }
+
+  .small-preview > div{
+    height: 3rem;
+    flex: 1;
+  }
+
+  .custom-palette h4{
+    flex: 1;
+    text-align: left;
+  }
+
+  .pick-palette-btn{
+    height: 3rem;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+    background-color: rgb(49, 49, 49);
+    color: white;
+  }
+
